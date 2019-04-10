@@ -3,12 +3,12 @@
 
 # Pages
   - [ ] Home
-  - [ ] Join
-  - [ ] Login
-  - [ ] Search
+  - [x] Join
+  - [x] Login
+  - [x] Search
   - [ ] User Detail
-  - [ ] Edit Profile
-  - [ ] Change password
-  - [ ] Upload
+  - [x] Edit Profile
+  - [x] Change password
+  - [x] Upload
   - [ ] Video Detail
-  - [ ] Edit Video
+  - [x] Edit Video
