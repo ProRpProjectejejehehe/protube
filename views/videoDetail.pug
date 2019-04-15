@@ -1,10 +1,10 @@
 extends layouts/main
 
 block content
-    .video_player
+    .video__player
         video(src=`/${video.fileUrl}`)
-    .video_info
-        a(href=routes.editVideo) Edit Video
-        h5.video_title=video.title
-        span.video_views=video.views
-        p.video_description
+    .video__info
+        a(href=routes.editVideo(video.id)) Edit video
+        h5.video__title=video.title
+        span.video__views=video.views
+        p.video__description=video.description
