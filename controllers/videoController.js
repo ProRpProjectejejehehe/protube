@@ -158,3 +158,9 @@ export const postAddComment = async (req, res) => {
     res.end();
   }
 };
+
+export const deleteComment = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+};
