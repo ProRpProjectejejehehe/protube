@@ -3,13 +3,13 @@ import routes from "../routes";
 import {
   postRegisterView,
   postAddComment,
-  deleteComment
+  postRemoveComment
 } from "../controllers/videoController";
 
 const apiRouter = express.Router();
 
 apiRouter.post(routes.registerView, postRegisterView);
 apiRouter.post(routes.addComment, postAddComment);
-apiRouter.post(routes.deleteComment, deleteComment);
+apiRouter.post(routes.removeComment, postRemoveComment);
 
 export default apiRouter;

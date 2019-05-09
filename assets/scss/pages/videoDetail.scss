@@ -57,12 +57,17 @@
         &:not(:last-child) {
           margin-bottom: 15px;
         }
+        .comment__delete {
+          i {
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+          }
+          .comment__delete-id {
+            display: none;
+          }
+        }
       }
-    }
-    .delBtn {
-      position: absolute;
-      right: 10px;
-      cursor: pointer;
     }
   }
 }
