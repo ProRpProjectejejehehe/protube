@@ -16,7 +16,7 @@ const delComment = (id, target) => {
 };
 
 const handleRemoveComment = async event => {
-  const target = event.target;
+  const { target } = event;
   console.log(target);
   const commentId = target.id;
   console.log(commentId);

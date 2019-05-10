@@ -11,8 +11,15 @@ const increaseNumber = () => {
 const addComment = comment => {
   const li = document.createElement("li");
   const span = document.createElement("span");
+  const delBtn = document.createElement("i");
+  delBtn.className = "fas fa-trash-alt";
+  delBtn.id = comment.id;
+  delBtn.style.position = "absolute";
+  delBtn.style.right = "20px";
+  delBtn.style.cursor = "pointer";
   span.innerHTML = comment;
   li.appendChild(span);
+  li.appendChild(delBtn);
   commentList.prepend(li);
   increaseNumber();
 };
