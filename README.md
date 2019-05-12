@@ -1,14 +1,14 @@
-# wetube
 # Cloning Youtube with VanillaJS and NodeJS
-
+# Back-end : MongoDB, NodeJS, ES6, Express
+# Front-end : VanillaJS, SaSS, ES6, WebPack, Pug
 # Pages
-  - [ ] Home
+  - [x] Home
   - [x] Join
   - [x] Login
   - [x] Search
-  - [ ] User Detail
+  - [x] User Detail
   - [x] Edit Profile
   - [x] Change password
   - [x] Upload
-  - [ ] Video Detail
+  - [x] Video Detail
   - [x] Edit Video
