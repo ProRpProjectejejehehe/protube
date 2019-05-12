@@ -1,5 +1,5 @@
 # Cloning Youtube with VanillaJS and NodeJS
-Back-end : MongoDB, NodeJS, ES6, Express
+Back-end : MongoDB, NodeJS, ES6, Express ||
 Front-end : VanillaJS, SaSS, ES6, WebPack, Pug
 # Pages
   - [x] Home
