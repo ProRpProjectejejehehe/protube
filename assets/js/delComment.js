@@ -31,7 +31,7 @@ const handleRemoveComment = async event => {
 };
 
 const addEvent = () => {
-  delBtn.forEach(function(btn) {
+  delBtn.forEach(btn => {
     const Btn = btn;
     Btn.addEventListener("click", handleRemoveComment);
   });
