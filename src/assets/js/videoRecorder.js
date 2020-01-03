@@ -41,7 +41,7 @@ const getVideo = async () => {
     streamObject = stream;
     startRecording();
   } catch (error) {
-    recordBtn.innerHTML = "☹️ Cant record";
+    recordBtn.innerHTML = "✖ Cant record";
   } finally {
     recordBtn.removeEventListener("click", getVideo);
   }

@@ -59,9 +59,10 @@ export const videoDetail = async (req, res) => {
     params: { id }
   } = req;
   try {
+    console.log(req.user.comments);
     const video = await Video.findById(id)
-      .populate("creator")
-      .populate("comments");
+      .populate("comments")
+      .populate("creator");
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     res.redirect(routes.home);
@@ -76,7 +77,7 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.creator !== req.user.id) {
+    if (video.creator.toString() !== req.user.id) {
       throw Error();
     } else {
       res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
@@ -103,14 +104,18 @@ export const postEditVideo = async (req, res) => {
 
 export const deleteVideo = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
+    user
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.creator !== req.user.id) {
+    if (video.creator.toString() !== req.user.id) {
       throw Error();
     } else {
       await Video.findOneAndRemove({ _id: id });
+      const filter = user.videos.filter(item => item.toString() !== id);
+      user.videos = filter;
+      user.save();
     }
   } catch (error) {
     console.log(error);
@@ -151,7 +156,9 @@ export const postAddComment = async (req, res) => {
       creator: user.id
     });
     video.comments.push(newComment.id);
+    user.comments.push(newComment.id);
     video.save();
+    user.save();
   } catch (error) {
     res.status(400);
   } finally {
@@ -161,10 +168,14 @@ export const postAddComment = async (req, res) => {
 
 export const postRemoveComment = async (req, res) => {
   const {
-    params: { commentId }
+    params: { commentId },
+    user
   } = req;
   try {
     await Comment.findOneAndRemove(commentId);
+    const filter = user.comments.filter(item => item.toString() !== commentId);
+    user.comments = filter;
+    user.save();
   } catch (error) {
     res.status(400);
   } finally {

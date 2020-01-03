@@ -1,4 +1,5 @@
 import "./db";
+import "@babel/polyfill";
 import dotenv from "dotenv";
 import app from "./app";
 import "./models/Video";
@@ -7,6 +8,7 @@ import "./models/User";
 
 dotenv.config();
 
+// eslint-disable-next-line prefer-destructuring
 const PORT = process.env.PORT || 4000;
 
 const handleListening = () =>
