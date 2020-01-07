@@ -11,7 +11,7 @@
     align-items: center;
     .header__column {
       i {
-        color: white;
+        color: #eee;
         font-size: 30px;
       }
       &:nth-child(2) {
@@ -23,7 +23,7 @@
       }
       ul {
         display: flex;
-        color: white;
+        color: #eee;
         font-weight: 600;
         text-transform: uppercase;
         li:not(:last-child) {

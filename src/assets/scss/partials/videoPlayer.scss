@@ -12,10 +12,10 @@
   .videoPlayer__controls {
     opacity: 0;
     transition: opacity 0.4s linear;
-    color: white;
+    color: #eee;
     position: absolute;
     z-index: 9;
-    bottom: 5px;
+    bottom: 1px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
